@@ -23,6 +23,7 @@ $sql_total_atrasados = "SELECT COUNT(*) as total FROM pagamentos WHERE status = 
 $result_total_atrasados = $conexao->query($sql_total_atrasados);
 $total_atrasados = $result_total_atrasados->fetch_assoc()["total"];
 
+
 $sql_total_pendentes = "SELECT COUNT(*) as total FROM pagamentos WHERE status = 'pendente'";
 $result_total_pendentes = $conexao->query($sql_total_pendentes);
 $total_pendentes = $result_total_pendentes->fetch_assoc()["total"];
@@ -179,10 +180,19 @@ if ($hora < 12) {
                                     <?php while ($linha = $resultado_tabela_dashboard->fetch_assoc()) { ?>
                                         <?php
                                         $status = !empty($linha["status"]) ? $linha["status"] : "sem-status";
-                                        $statusTexto = !empty($linha["status"]) ? ucfirst($linha["status"]) : "Sem registro";
+
+                                        if ($status != "pago" && !empty($linha["vencimento"]) && $linha["vencimento"] < date("Y-m-d")) {
+                                            $status = "atrasado";
+                                        }
+
+                                        $statusTexto = ($status != "sem-status") ? ucfirst($status) : "Sem registro";
 
                                         $valorFormatado = !empty($linha["valor"])
                                             ? "R$ " . number_format($linha["valor"], 2, ',', '.')
+                                            : "-";
+
+                                        $vencimentoFormatado = !empty($linha["vencimento"])
+                                            ? date("d/m/Y", strtotime($linha["vencimento"]))
                                             : "-";
 
                                         $vencimentoFormatado = !empty($linha["vencimento"])
