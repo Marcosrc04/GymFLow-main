@@ -1,0 +1,35 @@
+# GymFlow
+
+Sistema de academia com área do aluno e administrador.
+
+## Funcionalidades
+- Login de usuários
+- Cadastro
+- Área do aluno
+- Área do administrador
+- Integração com banco de dados
+- Autenticação de usuários
+
+## Tecnologias utilizadas
+- PHP
+- MySQL
+- HTML
+- CSS
+- JavaScript
+
+## Banco de dados
+O arquivo do banco está disponível na pasta `banco/`.
+
+## Como executar localmente
+1. Instale o XAMPP
+2. Coloque a pasta do projeto dentro de `htdocs`
+3. Inicie Apache e MySQL
+4. Abra o phpMyAdmin
+5. Crie um banco de dados
+6. Importe o arquivo `banco/gymflow.sql`
+7. Configure a conexão com o banco no arquivo correspondente
+8. Acesse o projeto pelo navegador
+
+## Observação
+Este projeto utiliza PHP e MySQL.  
+O GitHub Pages não executa linguagens server-side como PHP e também não oferece suporte direto a banco de dados, então o repositório serve para disponibilização do código-fonte e da estrutura do banco. 
