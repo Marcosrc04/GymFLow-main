@@ -8,7 +8,11 @@ if (!isset($_SESSION["id"])) {
     exit();
 }
 
-// pega os dados
+if ($_SERVER["REQUEST_METHOD"] != "POST") {
+    header("Location: gerar-treino.php");
+    exit();
+}
+
 $objetivo = $_POST["objetivo"];
 $nivel = $_POST["nivel"];
 $dias = $_POST["dias"];
@@ -16,7 +20,6 @@ $foco = $_POST["foco"];
 
 $treino = "";
 
-// lógica da "IA"
 if ($objetivo == "hipertrofia" && $nivel == "iniciante") {
     $treino = "
     Dia 1: Peito + Tríceps<br>
@@ -27,15 +30,15 @@ if ($objetivo == "hipertrofia" && $nivel == "iniciante") {
     - Puxada 3x10<br>
     - Rosca direta 3x12
     ";
-}
-
-if ($objetivo == "emagrecimento") {
+} elseif ($objetivo == "emagrecimento") {
     $treino = "
     Treino Full Body:<br>
     - Agachamento 3x15<br>
     - Corrida 20min<br>
     - Abdominal 3x20
     ";
+} else {
+    $treino = "Ainda não existe treino cadastrado para essa combinação.";
 }
 ?>
 
@@ -44,6 +47,7 @@ if ($objetivo == "emagrecimento") {
 <head>
     <meta charset="UTF-8">
     <title>Treino Gerado | GymFlow</title>
+    <link rel="stylesheet" href="../../../arquivos/css/style.css">
 </head>
 <body>
 

@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title></title>
+    <title>Criar treino | GymFlow</title>
+   <link href="<?php echo $base; ?>arquivos/css/style.css">
 </head>
 <body>
     <form action="processar-treino.php" method="post">

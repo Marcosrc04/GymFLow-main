@@ -48,7 +48,7 @@ if ($hora < 12) {
 
             <nav class="menu-sidebar">
                 <a href="#">Início</a>
-                <a href="#">Meus Treinos</a>
+                <a href="gerar_treino_com_ia/gerar-treino.php">Meus Treinos</a>
                 <a href="#">Mensalidade</a>
                 <a href="#">Meu Perfil</a>
                 <a href="../../logout.php">Sair</a>
