@@ -34,6 +34,33 @@ if ($hora < 12) {
     <link rel="shortcut icon" href="../../arquivos/imagem/GF.ico" type="image/x-icon">
     <link rel="stylesheet" href="../../arquivos/css/style.css">
 </head>
+<header class="topo-header">
+    <div class="container-topo">
+
+        <div class="topo-esquerda">
+            <div class="logo-box">🏋️</div>
+
+            <div class="titulo">
+                <h1>GymFlow</h1>
+                <p>Área do Aluno</p>
+            </div>
+        </div>
+<div class="foto-usuario-topo">
+<img src="../../arquivos/imagem/" alt="">
+</div>
+        <div class="topo-direita">
+            <div class="usuario-info">
+                <p class="nome-usuario">
+                    <?php echo $_SESSION["nome"]; ?>
+                </p>
+                <p class="tipo-usuario">Aluno</p>
+            </div>
+
+            <a href="../../logout.php" class="btn-sair">Sair</a>
+        </div>
+
+    </div>
+</header>
 
 <body>
 
