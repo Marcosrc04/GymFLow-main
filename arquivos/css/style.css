@@ -12,6 +12,13 @@ body {
 }
 
 .container-login {
+    background-image: url(../imagem/background-logo.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+
+
     min-height: 100vh;
     display: flex;
     justify-content: center;
@@ -20,9 +27,13 @@ body {
 }
 
 .card-login {
+    background: rgba(20, 20, 20, 0.6);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+
     width: 100%;
     max-width: 430px;
-    background-color: #141414;
+    background: rgba(20, 20, 20, 0.6);
     border: 1px solid rgba(255, 204, 0, 0.15);
     border-radius: 24px;
     padding: 40px 30px;
@@ -204,6 +215,12 @@ body {
     border-right: 1px solid rgba(255, 204, 0, 0.08);
     padding: 30px 20px;
     flex-shrink: 0;
+
+    background-image: url(../imagem/listras-da-barra.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
 }
 
 .topo-sidebar {
@@ -809,6 +826,6 @@ select.input-padrao,
 }
 
 .btn-sair:hover {
-    background-color:#f5c518;
-    color:black;
+    background-color: #f5c518;
+    color: black;
 }
