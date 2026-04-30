@@ -72,6 +72,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <link rel="stylesheet" href="arquivos/css/style.css">
 </head>
 
+
 <body>
 
     <div class="container-login">
@@ -88,7 +89,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     <label for="nome">Nome</label>
                     <input type="text" id="nome" name="nome" placeholder="Digite seu nome completo" required>
                 </div>
-                
+
                 <div class="campo">
                     <label for="email">E-mail</label>
                     <input type="email" id="email" name="email" placeholder="Digite seu e-mail" required>
@@ -102,13 +103,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <div class="campo">
                     <label for="confirmar_senha">Confirmar senha</label>
                     <input type="password" id="confirmar_senha" name="confirmar_senha" placeholder="Confirme sua senha"
-                        required>
-                    </div>
-                    
-                    <div class="campo">
-                        <label for="foto">Foto de perfil</label>
-                        <input type="file" name="foto" id="foto" accept="image/*">
-                    </div>
+                    required>
+                </div>
+
+                <div class="campo">
+                    <label for="foto">Foto de perfil</label>
+
+                    <input type="file" id="foto" name="foto" id="foto" accept="image/*">
+
+                    <label for="foto" class="btn-upload">Escolher foto</label>
+
+                    <span id="nome-arquivo">Nenhum arquivo escolhido</span>
+                </div>
 
                 <button type="submit" class="btn-login">Cadastrar</button>
 
@@ -117,10 +123,22 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 </div>
 
             </form>
-            
+
         </div>
     </div>
-    
+
+                    <script>
+                        const inputFoto = document.getElementById("foto");
+                        const nomeArquivo = document.getElementById("nome-arquivo");
+                    
+                        inputFoto.addEventListener("change", function () {
+                            if (this.files.length > 0) {
+                                nomeArquivo.textContent = this.files[0].name;
+                            } else {
+                                nomeArquivo.textContent = "Nenhum arquivo escolhido";
+                            }
+                        });
+                        </script>
 </body>
 
 </html>

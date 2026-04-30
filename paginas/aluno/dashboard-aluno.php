@@ -45,9 +45,16 @@ if ($hora < 12) {
                 <p>Área do Aluno</p>
             </div>
         </div>
-<div class="foto-usuario-topo">
-<img src="../../arquivos/imagem/" alt="">
-</div>
+        <div class="topo-foto-perfil">
+            <?php if (!empty($_SESSION["foto"])) { ?>
+                <img src="../../arquivos/imagem/perfis/<?php echo htmlspecialchars($_SESSION["foto"]); ?>"
+                    class="foto-header">
+            <?php } else { ?>
+                <div class="avatar-letra-header">
+                    <?php echo strtoupper(substr($_SESSION["nome"], 0, 1)); ?>
+                </div>
+            <?php } ?>
+        </div>
         <div class="topo-direita">
             <div class="usuario-info">
                 <p class="nome-usuario">
@@ -97,7 +104,9 @@ if ($hora < 12) {
                 </div>
 
                 <div class="header-direita">
+
                     <div class="usuario-logado-box">
+
                         <?php if (!empty($_SESSION["foto"])) { ?>
                             <img src="../../arquivos/imagem/perfis/<?php echo htmlspecialchars($_SESSION["foto"]); ?>"
                                 class="foto-usuario-topo">
