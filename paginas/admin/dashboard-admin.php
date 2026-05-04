@@ -79,6 +79,45 @@ if ($hora < 12) {
 
 <body>
 
+        <div class="container-topo">
+
+            <div class="topo-esquerda">
+                <div class="logo-box">🏋️</div>
+
+                <div class="titulo">
+                    <h1>GymFlow</h1>
+                    <p>Área do Aluno</p>
+                </div>
+            </div>
+
+            <div class="topo-foto-perfil">
+                <?php if (!empty($_SESSION["foto"])) { ?>
+                    <img 
+                        src="../../arquivos/imagem/perfis/<?php echo htmlspecialchars($_SESSION["foto"]); ?>"
+                        alt="Foto de perfil"
+                        class="foto-header"
+                    >
+                <?php } else { ?>
+                    <div class="avatar-letra-header">
+                        <?php echo strtoupper(substr($_SESSION["nome"], 0, 1)); ?>
+                    </div>
+                <?php } ?>
+            </div>
+
+            <div class="topo-direita">
+                <div class="usuario-info">
+                    <p class="nome-usuario">
+                        <?php echo htmlspecialchars($_SESSION["nome"]); ?>
+                    </p>
+                    <p class="tipo-usuario">Aluno</p>
+                </div>
+
+                <a href="../../logout.php" class="btn-sair">Sair</a>
+            </div>
+
+        </div>
+    </header>
+
     <div class="layout-dashboard">
 
         <aside class="sidebar">

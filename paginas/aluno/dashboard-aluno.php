@@ -7,9 +7,7 @@ if (!isset($_SESSION["id"])) {
     header("Location: ../../login.php");
     exit();
 }
-?>
 
-<?php
 date_default_timezone_set("America/Sao_Paulo");
 
 $hora = date("H");
@@ -34,42 +32,48 @@ if ($hora < 12) {
     <link rel="shortcut icon" href="../../arquivos/imagem/GF.ico" type="image/x-icon">
     <link rel="stylesheet" href="../../arquivos/css/style.css">
 </head>
-<header class="topo-header">
-    <div class="container-topo">
-
-        <div class="topo-esquerda">
-            <div class="logo-box">🏋️</div>
-
-            <div class="titulo">
-                <h1>GymFlow</h1>
-                <p>Área do Aluno</p>
-            </div>
-        </div>
-        <div class="topo-foto-perfil">
-            <?php if (!empty($_SESSION["foto"])) { ?>
-                <img src="../../arquivos/imagem/perfis/<?php echo htmlspecialchars($_SESSION["foto"]); ?>"
-                    class="foto-header">
-            <?php } else { ?>
-                <div class="avatar-letra-header">
-                    <?php echo strtoupper(substr($_SESSION["nome"], 0, 1)); ?>
-                </div>
-            <?php } ?>
-        </div>
-        <div class="topo-direita">
-            <div class="usuario-info">
-                <p class="nome-usuario">
-                    <?php echo $_SESSION["nome"]; ?>
-                </p>
-                <p class="tipo-usuario">Aluno</p>
-            </div>
-
-            <a href="../../logout.php" class="btn-sair">Sair</a>
-        </div>
-
-    </div>
-</header>
 
 <body>
+
+    <header class="topo-header">
+        <div class="container-topo">
+
+            <div class="topo-esquerda">
+                <div class="logo-box">🏋️</div>
+
+                <div class="titulo">
+                    <h1>GymFlow</h1>
+                    <p>Área do Aluno</p>
+                </div>
+            </div>
+
+            <div class="topo-foto-perfil">
+                <?php if (!empty($_SESSION["foto"])) { ?>
+                    <img 
+                        src="../../arquivos/imagem/perfis/<?php echo htmlspecialchars($_SESSION["foto"]); ?>"
+                        alt="Foto de perfil"
+                        class="foto-header"
+                    >
+                <?php } else { ?>
+                    <div class="avatar-letra-header">
+                        <?php echo strtoupper(substr($_SESSION["nome"], 0, 1)); ?>
+                    </div>
+                <?php } ?>
+            </div>
+
+            <div class="topo-direita">
+                <div class="usuario-info">
+                    <p class="nome-usuario">
+                        <?php echo htmlspecialchars($_SESSION["nome"]); ?>
+                    </p>
+                    <p class="tipo-usuario">Aluno</p>
+                </div>
+
+                <a href="../../logout.php" class="btn-sair">Sair</a>
+            </div>
+
+        </div>
+    </header>
 
     <div class="layout-dashboard">
 
@@ -101,20 +105,24 @@ if ($hora < 12) {
 
                     <p class="subtitulo-dashboard">
                         Acompanhe seu desenvolvimento, Mensalidade e fique sempre Atualizado 💪
+                    </p>
                 </div>
 
                 <div class="header-direita">
-
                     <div class="usuario-logado-box">
 
                         <?php if (!empty($_SESSION["foto"])) { ?>
-                            <img src="../../arquivos/imagem/perfis/<?php echo htmlspecialchars($_SESSION["foto"]); ?>"
-                                class="foto-usuario-topo">
+                            <img 
+                                src="../../arquivos/imagem/perfis/<?php echo htmlspecialchars($_SESSION["foto"]); ?>"
+                                alt="Foto de perfil"
+                                class="foto-usuario-topo"
+                            >
                         <?php } else { ?>
                             <div class="avatar-letra">
                                 <?php echo strtoupper(substr($_SESSION["nome"], 0, 1)); ?>
                             </div>
                         <?php } ?>
+
                         <div class="dados-usuario-topo">
                             <h3>
                                 <?php echo htmlspecialchars($_SESSION["nome"]); ?>
