@@ -79,43 +79,40 @@ if ($hora < 12) {
 
 <body>
 
-        <div class="container-topo">
+    <div class="container-topo">
 
-            <div class="topo-esquerda">
-                <div class="logo-box">🏋️</div>
+        <div class="topo-esquerda">
+            <div class="logo-box">🏋️</div>
 
-                <div class="titulo">
-                    <h1>GymFlow</h1>
-                    <p>Área do Aluno</p>
-                </div>
+            <div class="titulo">
+                <h1>GymFlow</h1>
+                <p>Área do Aluno</p>
             </div>
-
-            <div class="topo-foto-perfil">
-                <?php if (!empty($_SESSION["foto"])) { ?>
-                    <img 
-                        src="../../arquivos/imagem/perfis/<?php echo htmlspecialchars($_SESSION["foto"]); ?>"
-                        alt="Foto de perfil"
-                        class="foto-header"
-                    >
-                <?php } else { ?>
-                    <div class="avatar-letra-header">
-                        <?php echo strtoupper(substr($_SESSION["nome"], 0, 1)); ?>
-                    </div>
-                <?php } ?>
-            </div>
-
-            <div class="topo-direita">
-                <div class="usuario-info">
-                    <p class="nome-usuario">
-                        <?php echo htmlspecialchars($_SESSION["nome"]); ?>
-                    </p>
-                    <p class="tipo-usuario">Aluno</p>
-                </div>
-
-                <a href="../../logout.php" class="btn-sair">Sair</a>
-            </div>
-
         </div>
+
+        <div class="topo-foto-perfil">
+            <?php if (!empty($_SESSION["foto"])) { ?>
+                <img src="../../arquivos/imagem/perfis/<?php echo htmlspecialchars($_SESSION["foto"]); ?>"
+                    alt="Foto de perfil" class="foto-header">
+            <?php } else { ?>
+                <div class="avatar-letra-header">
+                    <?php echo strtoupper(substr($_SESSION["nome"], 0, 1)); ?>
+                </div>
+            <?php } ?>
+        </div>
+
+        <div class="topo-direita">
+            <div class="usuario-info">
+                <p class="nome-usuario">
+                    <?php echo htmlspecialchars($_SESSION["nome"]); ?>
+                </p>
+                <p class="tipo-usuario">Aluno</p>
+            </div>
+
+            <a href="../../logout.php" class="btn-sair">Sair</a>
+        </div>
+
+    </div>
     </header>
 
     <div class="layout-dashboard">
@@ -128,11 +125,21 @@ if ($hora < 12) {
             </div>
 
             <nav class="menu-sidebar">
-                <a href="dashboard-admin.php">Dashboard</a>
-                <a href="alunos.php">Alunos</a>
-                <a href="pagamentos.php">Mensalidades</a>
-                <a href="#">Treinos</a>
-                <a href="../../logout.php">Sair</a>
+
+                <div class="hamburger-menu" id="hamburger">
+                    <span class="line"></span>
+                    <span class="line"></span>
+                    <span class="line"></span>
+                </div>
+
+                <ul class="nav-links" id="nav-links">
+                    <li><a href="dashboard-admin.php">Dashboard</a></li>
+                    <li><a href="alunos.php">Alunos</a></li>
+                    <li><a href="pagamentos.php">Mensalidades</a></li>
+                    <li><a href="#">Treinos</a></li>
+                    <li><a href="../../logout.php">Sair</a></li>
+                </ul>
+
             </nav>
         </aside>
 
@@ -301,23 +308,7 @@ if ($hora < 12) {
         </main>
 
     </div>
-
-    <script>
-        document.querySelectorAll(".btn-expandir").forEach(function (botao) {
-            botao.addEventListener("click", function () {
-                const linhaAtual = botao.closest("tr");
-                const detalhes = linhaAtual.nextElementSibling;
-
-                if (detalhes.style.display === "table-row") {
-                    detalhes.style.display = "none";
-                    botao.textContent = "▼";
-                } else {
-                    detalhes.style.display = "table-row";
-                    botao.textContent = "▲";
-                }
-            });
-        });
-    </script>
+     <script src="../../arquivos/js/script.js"></script>
 </body>
 
 </html>

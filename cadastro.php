@@ -103,7 +103,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <div class="campo">
                     <label for="confirmar_senha">Confirmar senha</label>
                     <input type="password" id="confirmar_senha" name="confirmar_senha" placeholder="Confirme sua senha"
-                    required>
+                        required>
                 </div>
 
                 <div class="campo">
@@ -127,18 +127,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         </div>
     </div>
 
-                    <script>
-                        const inputFoto = document.getElementById("foto");
-                        const nomeArquivo = document.getElementById("nome-arquivo");
-                    
-                        inputFoto.addEventListener("change", function () {
-                            if (this.files.length > 0) {
-                                nomeArquivo.textContent = this.files[0].name;
-                            } else {
-                                nomeArquivo.textContent = "Nenhum arquivo escolhido";
-                            }
-                        });
-                        </script>
+    <script>
+        const inputFoto = document.getElementById("foto");
+        const nomeArquivo = document.getElementById("nome-arquivo");
+
+        inputFoto.addEventListener("change", function () {
+            if (this.files.length > 0) {
+                nomeArquivo.textContent = this.files[0].name;
+            } else {
+                nomeArquivo.textContent = "Nenhum arquivo escolhido";
+            }
+        });
+    </script>
 </body>
 
 </html>

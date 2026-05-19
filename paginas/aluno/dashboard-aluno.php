@@ -49,11 +49,8 @@ if ($hora < 12) {
 
             <div class="topo-foto-perfil">
                 <?php if (!empty($_SESSION["foto"])) { ?>
-                    <img 
-                        src="../../arquivos/imagem/perfis/<?php echo htmlspecialchars($_SESSION["foto"]); ?>"
-                        alt="Foto de perfil"
-                        class="foto-header"
-                    >
+                    <img src="../../arquivos/imagem/perfis/<?php echo htmlspecialchars($_SESSION["foto"]); ?>"
+                        alt="Foto de perfil" class="foto-header">
                 <?php } else { ?>
                     <div class="avatar-letra-header">
                         <?php echo strtoupper(substr($_SESSION["nome"], 0, 1)); ?>
@@ -112,11 +109,8 @@ if ($hora < 12) {
                     <div class="usuario-logado-box">
 
                         <?php if (!empty($_SESSION["foto"])) { ?>
-                            <img 
-                                src="../../arquivos/imagem/perfis/<?php echo htmlspecialchars($_SESSION["foto"]); ?>"
-                                alt="Foto de perfil"
-                                class="foto-usuario-topo"
-                            >
+                            <img src="../../arquivos/imagem/perfis/<?php echo htmlspecialchars($_SESSION["foto"]); ?>"
+                                alt="Foto de perfil" class="foto-usuario-topo">
                         <?php } else { ?>
                             <div class="avatar-letra">
                                 <?php echo strtoupper(substr($_SESSION["nome"], 0, 1)); ?>
