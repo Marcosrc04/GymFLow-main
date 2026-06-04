@@ -46,8 +46,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
             $senha_hash = password_hash($senha, PASSWORD_DEFAULT);
 
-            $sql = "INSERT INTO usuarios (nome, email, senha, tipo, foto)
-                    VALUES ('$nome', '$email', '$senha_hash', 'aluno', '$foto_nome_final')";
+            $sql = "INSERT INTO usuarios (nome, email, senha, tipo)
+        VALUES ('$nome', '$email', '$senha_hash', 'aluno')";
 
             if ($conexao->query($sql) === TRUE) {
                 header("Location: login.php");
@@ -109,9 +109,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <div class="campo">
                     <label for="foto">Foto de perfil</label>
 
-                    <input type="file" id="foto" name="foto" id="foto" accept="image/*">
+                    <input type="file" name="foto" id="foto" accept="image/*" style="display: none;">
 
-                    <label for="foto" class="btn-upload">Escolher foto</label>
+                    <label for="foto" class="btn-upload">📷 Escolher foto</label>
 
                     <span id="nome-arquivo">Nenhum arquivo escolhido</span>
                 </div>
@@ -131,7 +131,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         const inputFoto = document.getElementById("foto");
         const nomeArquivo = document.getElementById("nome-arquivo");
 
-        inputFoto.addEventListener("change", function () {
+        inputFoto.addEventListener("change", function() {
             if (this.files.length > 0) {
                 nomeArquivo.textContent = this.files[0].name;
             } else {
