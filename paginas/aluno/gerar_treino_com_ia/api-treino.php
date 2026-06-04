@@ -18,7 +18,15 @@ if (empty($prompt)) {
     echo json_encode(["erro" => "Prompt vazio"]);
     exit();
 }
-$groq_key = getenv('GROQ_API_KEY');
+
+$env = parse_ini_file(__DIR__ . '/.env');
+
+if (!$env || !isset($env['GROQ_API_KEY'])) {
+    echo json_encode(["erro" => "Chave da API não configurada"]);
+    exit();
+}
+
+$groq_key = $env['GROQ_API_KEY'];
 
 $payload = [
     "model" => "llama-3.3-70b-versatile",
