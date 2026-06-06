@@ -1080,12 +1080,13 @@ select.input-padrao {
 }
 
 .coluna-acoes a {
-    color: black;
+    color: white;
     text-decoration: none;
 }
 
 .coluna-acoes a:hover {
-    text-decoration: underline
+    text-decoration: underline;
+    color: #f5c518;
 }
 
 .status {
