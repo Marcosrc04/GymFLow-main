@@ -40,7 +40,7 @@ $primeiro_nome = explode(' ', $_SESSION["nome"])[0];
 <div class="sidebar-overlay" id="sidebar-overlay"></div>
 
 <div class="layout">
-    <aside class="sidebar" id="sidebar">
+        <aside class="sidebar" id="sidebar">
         <span class="sidebar-label">Menu</span>
         <a href="/GymFlow-main/paginas/aluno/dashboard-aluno.php"><span class="icon">📊</span> Dashboard</a>
         <a href="/GymFlow-main/paginas/aluno/gerar_treino_com_ia/gerar-treino.php" class="ativo"><span class="icon">🏋️</span> Meus Treinos</a>

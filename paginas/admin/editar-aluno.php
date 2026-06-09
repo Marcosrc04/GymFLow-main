@@ -77,13 +77,11 @@ $inicial = strtoupper(substr($aluno["nome"] ?? "A", 0, 1));
 <div class="sidebar-overlay" id="sidebar-overlay"></div>
 
 <div class="layout">
-    <aside class="sidebar" id="sidebar">
+        <aside class="sidebar" id="sidebar">
         <span class="sidebar-label">Menu</span>
         <a href="/GymFlow-main/paginas/admin/dashboard-admin.php"><span class="icon">📊</span> Dashboard</a>
-        <a href="/GymFlow-main/paginas/aluno/gerar_treino_com_ia/gerar-treino.php"><span class="icon">🏋️</span> Meus Treinos</a>
         <a href="/GymFlow-main/paginas/admin/alunos.php" class="ativo"><span class="icon">👥</span> Alunos</a>
         <a href="/GymFlow-main/paginas/admin/pagamentos.php"><span class="icon">💳</span> Mensalidades</a>
-        <a href="/GymFlow-main/paginas/admin/caixa.php"><span class="icon">💰</span> Caixa</a>
         <a href="#"><span class="icon">🏋️</span> Treinos</a>
         <span class="sidebar-label">Conta</span>
         <a href="/GymFlow-main/paginas/aluno/perfil.php"><span class="icon">👤</span> Meu Perfil</a>
